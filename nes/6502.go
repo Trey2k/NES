@@ -276,10 +276,6 @@ func (cpu *CPU) Disassemble(nStart uint16, nStop uint16) ([]string, []uint16) {
 			sInst += "$" + Hex8(value) + " [$" + Hex16(uint16(addr)+uint16(value)) + "] {REL}"
 		}
 
-		// Add the formed string to a std::map, using the instruction's
-		// address as the key. This makes it convenient to look for later
-		// as the instructions are variable in length, so a straight up
-		// incremental index is not sufficient.
 		mapLines[index] = sInst
 
 		index++
